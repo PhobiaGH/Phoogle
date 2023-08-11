@@ -27,19 +27,22 @@ Installation steps:
     
     . ~/.bash_profile
     
-6: 
+6: Install Node Version Manager
+    
     nvm install
 
-7: 
+7: Use installed node version
+    
     nvm use
 
-8: 
-    cd into Phoogle dir
+8: cd into Phoogle dir
 
-9: 
+9: Install node dependencies
+    
     npm install
 
-10: 
+10: Start the programm
+    
     npm start URL-you-wish-to-use
 
 That's it!
