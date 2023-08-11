@@ -26,7 +26,8 @@ Installation steps:
 
 8: cd into Phoogle dir
 
-(To use the program)
-9: npm start URL-you-wish-to-use
+9: npm install
+
+10: npm start URL-you-wish-to-use
 
 That's it!
