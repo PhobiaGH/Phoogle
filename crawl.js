@@ -1,6 +1,13 @@
 const {JSDOM} = require('jsdom');
 
-// Input for the URLs you wish to crawl
+// Sends GET request, grabbing the HTML of the crawled URL
+async function crawlPage(currentURL) {
+    console.log(`Actively crawling: ${currentURL}`)
+    const resp = await fetch(currentURL)
+    console.log(await resp.text())
+};
+
+// Grabs URLs, changes relative URLs into absolute URLs, and catches invalid URLs
 function getURLsFromHTML(htmlBody, baseURL) {
     const urls = []
     const dom = new JSDOM(htmlBody)
@@ -40,5 +47,5 @@ function normalizeURL(urlString) {
 
 // Exports functions for use elsewhere in the app
 module.exports = {
-    normalizeURL, getURLsFromHTML
+    normalizeURL, getURLsFromHTML, crawlPage
 };
