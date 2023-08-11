@@ -3,8 +3,12 @@ const {JSDOM} = require('jsdom');
 // Sends GET request, grabbing the HTML of the crawled URL
 async function crawlPage(currentURL) {
     console.log(`Actively crawling: ${currentURL}`)
-    const resp = await fetch(currentURL)
-    console.log(await resp.text())
+    try {
+        const resp = await fetch(currentURL)
+        console.log(await resp.text())
+    } catch (err) {
+        console.log(`error attempting fetch: ${err.message}, on page: ${currentURL}`)
+    };
 };
 
 // Grabs URLs, changes relative URLs into absolute URLs, and catches invalid URLs
