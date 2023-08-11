@@ -20,18 +20,22 @@ test('sortPages 2', () => {
     expect(actual).toEqual(expected)
 });
 
-// Tests sorting of pages (3 pages)
-test('sortPages 3', () => {
+// Tests sorting of pages (5 pages)
+test('sortPages 5', () => {
     const input = {
         'https://github.com': 1,
+        'https://github.com/PhobiaGH/path': 2,
         'https://github.com/PhobiaGH': 3,
-        'https://github.com/PhobiaGH/path': 2
+        'https://github.com/path': 4,
+        'https://github.com/path1': 5
     };
     const actual = sortPages(input)
     const expected = [
-        ['https://github.com', 1],
+        ['https://github.com/path1', 5],
+        ['https://github.com/path', 4],
         ['https://github.com/PhobiaGH', 3],
-        ['https://github.com/PhobiaGH/path', 2]
+        ['https://github.com/PhobiaGH/path', 2],
+        ['https://github.com', 1]   
     ]
     expect(actual).toEqual(expected)
 });

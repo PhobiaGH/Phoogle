@@ -14,7 +14,7 @@ function printReport(pages) {
     console.log("========")
 };
 
-// Sorts output for report
+// Sorts output for report from most hits, to least
 function sortPages(pages) {
     const pagesArr = Object.entries(pages)
     pagesArr.sort((a,b) => {
