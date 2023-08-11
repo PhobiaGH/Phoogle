@@ -1,7 +1,7 @@
 /* This is the test enviorment for Jest, it is used for development purposes only. 
 If you are looking for the meat and bones of the code, you may safely ignore this 
 file unless you are interested in the complete workings of this app. Feel free install 
-Jest on your own machine, and borrow the code below if you are interested in giving Jest a try. */
+Jest on your own machine, and borrow the code below if you are interested in giving Jest a try */
 
 const {normalizeURL, getURLsFromHTML} = require('./crawl.js');
 const {test,expect} =require('@jest/globals');
