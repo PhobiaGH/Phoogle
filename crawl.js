@@ -1,27 +1,49 @@
 const {JSDOM} = require('jsdom');
 
 // Sends GET request, grabbing the HTML of the crawled URL
-async function crawlPage(currentURL) {
+async function crawlPage(baseURL, currentURL, pages) {
+    const baseURLGiven = new URL(baseURL)
+    const currentURLGiven = new URL(currentURL)
+
+    // Stops crawler from following external links
+    if (baseURLGiven.hostname !== currentURLGiven.hostname) {
+        return pages
+    };
+
+    // Checks if URL has already been crawled, and if so increments how many times it has been crawled
+    const normalizeCurrentURL = normalizeURL(currentURL)
+    if (pages[normalizeCurrentURL] > 0) {
+        pages[normalizeCurrentURL]++
+        return pages
+    }
+    
+    // Marks URL as crawled when visited for first time
+    pages[normalizeCurrentURL] = 1
     console.log(`Actively crawling: ${currentURL}`)
+
     try {
         // Catches broken URLs, logs the status code and continues to next URL
         const resp = await fetch(currentURL)
         if (resp.status > 399) {
             console.log(`error attempting fetch with status code: ${resp.status} on page: ${currentURL}`)
-            return
+            return pages
         };
         // Makes sure response is HTML, skips and logs all other responses
         const contentType = resp.headers.get("content-type")
         if (!contentType.includes("text/html")) {
             console.log(`Non HTML response, content type: ${contentType} on page ${currentURL}`)
-            return
+            return pages
         };
-        console.log(await resp.text())
+        const htmlBody = await resp.text()
+        const nextURLs = getURLsFromHTML(htmlBody, baseURL)
+        for (const nextURL of nextURLs) {
+            pages = await crawlPage(baseURL, nextURL, pages)
+        };
     } catch (err) {
         // Catches non-responsive URLs, skips them and logs the error
         console.log(`error attempting fetch: ${err.message}, on page: ${currentURL}`)
-        return
     };
+    return pages
 };
 
 // Grabs URLs, changes relative URLs into absolute URLs, and catches invalid URLs
