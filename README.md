@@ -5,7 +5,11 @@ Installation steps:
 
 1: cd into the directory you wish to store the code
 
-2: git clone https://github.com/PhobiaGH/Phoogle
+    cd /pathto/dir
+
+2: Clone the repo
+
+    git clone https://github.com/PhobiaGH/Phoogle
 
 3: Install nvm (Alterantively you can just install node directly from your distros repo if you don't care about being able to manage multiple node installs. This program uses node 19.9.0. If you skip installing nvm you may go right to step 8.)
 
@@ -36,6 +40,8 @@ Installation steps:
     nvm use
 
 8: cd into Phoogle dir
+
+    cd /path/to/dir
 
 9: Install node dependencies
     
