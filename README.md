@@ -27,14 +27,19 @@ Installation steps:
     
     . ~/.bash_profile
     
-6: nvm install
+6: 
+    nvm install
 
-7: nvm use
+7: 
+    nvm use
 
-8: cd into Phoogle dir
+8: 
+    cd into Phoogle dir
 
-9: npm install
+9: 
+    npm install
 
-10: npm start URL-you-wish-to-use
+10: 
+    npm start URL-you-wish-to-use
 
 That's it!
