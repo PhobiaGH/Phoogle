@@ -7,7 +7,7 @@ Installation steps:
 
 2: git clone https://github.com/PhobiaGH/Phoogle
 
-3: Install nvm 
+3: Install nvm (Alterantively you can just install node directly from your distros repo if you don't care about being able to manage multiple node installs. This program uses node 19.9.0)
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
 
 4: In your terminal type,
