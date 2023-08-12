@@ -71,7 +71,7 @@ function getURLsFromHTML(htmlBody, baseURL) {
         };
     };
     return urls
-}
+};
 
 /* Normalize(consolidate to same string) URLs with differing strings, but same destination into 
 a unified string while also stripping the protocol, and any trailing slashes from said string */

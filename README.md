@@ -1,7 +1,7 @@
 # Phoogle by Phobia
 A console based NodeJS web crawler to make searching the web a tad less stressful by automating part of the process, and searching the internet for you.
 
-Installation steps:
+Installation, and use steps:
 
 1: cd into the directory you wish to store the code
 
@@ -30,7 +30,9 @@ Installation steps:
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
     
     . ~/.bash_profile
-    
+
+    nvm -v
+
 6: Install Node Version Manager
     
     nvm install
@@ -49,6 +51,6 @@ Installation steps:
 
 10: Start the programm
     
-    npm start URL-you-wish-to-use
+    npm start url-you-wish-to-use
 
 That's it!
