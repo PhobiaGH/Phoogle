@@ -51,6 +51,6 @@ Installation, and use steps:
 
 10: Start the programm
     
-    npm start url-you-wish-to-use
+    npm start https://www.url-you-wish-to-use.com/
 
 That's it!

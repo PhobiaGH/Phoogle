@@ -15,7 +15,7 @@ async function crawlPage(baseURL, currentURL, pages) {
     if (pages[normalizeCurrentURL] > 0) {
         pages[normalizeCurrentURL]++
         return pages
-    }
+    };
     
     // Marks URL as crawled when visited for first time
     pages[normalizeCurrentURL] = 1
@@ -70,7 +70,7 @@ function getURLsFromHTML(htmlBody, baseURL) {
             };
         };
     };
-    return urls
+    return urls;
 };
 
 /* Normalize(consolidate to same string) URLs with differing strings, but same destination into 
@@ -81,7 +81,7 @@ function normalizeURL(urlString) {
     if (hostPath.length > 0 && hostPath.slice(-1) === '/') {
         return hostPath.slice(0, -1)
     };
-    return hostPath
+    return hostPath;
 };
 
 // Exports functions for use elsewhere in the app
