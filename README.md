@@ -53,4 +53,4 @@ Installation, and use steps:
     
     npm start https://www.url-you-wish-to-use.com/
 
-That's it!
+That's it! All links from crawled page are saved in /Phoogle/Crawled/yoursystemscurrenttimeanddate/links.txt enjoy!
