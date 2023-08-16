@@ -1,5 +1,6 @@
 const {crawlPage} = require('./crawl.js');
 const {printReport} = require('./report.js');
+const player = require('play-sound') (opts = {});
 
 // Checks validity of input, and logs output
 async function main() {
@@ -18,7 +19,18 @@ async function main() {
     const baseURL = process.argv[2];
     console.log(`Starting crawl of ${baseURL}`);
     const pages = await crawlPage(baseURL, baseURL, {});
-    printReport(pages);
+
+    // Play sound effect once program is done running, {timeout: 300} will be passed to the child process
+    await player.play('ding.mp3', function (err) {
+        if (err) throw err
+    });
+
+    // Manual kill
+    const audio = player.play('ding.mp3', function (err) {
+        if (err && !err.killed) throw err
+    });
+    audio.kill();
+    return printReport(pages);
 };
 
 main();
