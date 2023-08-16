@@ -20,7 +20,7 @@ async function main() {
     console.log(`Starting crawl of ${baseURL}`);
     const pages = await crawlPage(baseURL, baseURL, {});
 
-    // Play sound effect once program is done running, {timeout: 300} will be passed to the child process
+    // Play sound effect once program is done running
     await player.play('ding.mp3', function (err) {
         if (err) throw err
     });
