@@ -51,6 +51,14 @@ function getURLsFromHTML(htmlBody, baseURL) {
     const urls = [];
     const dom = new JSDOM(htmlBody);
     const linkElements = dom.window.document.querySelectorAll('a');
+    
+    // Removes the rel, and target attributes from <a> tags
+    const link = dom.window.document.querySelector('a');
+    if (link) {
+        link.removeAttribute('rel');
+        link.removeAttribute('target');
+    };
+
     for (const element of linkElements) {
         if (element.href.slice(0, 1) === '/') {
             // Relative URL
