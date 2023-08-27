@@ -3,10 +3,6 @@ const {printReport} = require('./report.js');
 const player = require('play-sound') (opts = {});
 
 console.log(`
-
-`);
-
-console.log(`
     _/_/_/    _/                                      _/           
    _/    _/  _/_/_/      _/_/      _/_/      _/_/_/  _/    _/_/    
   _/_/_/    _/    _/  _/    _/  _/    _/  _/    _/  _/  _/_/_/_/   

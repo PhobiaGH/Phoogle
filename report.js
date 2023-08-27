@@ -17,7 +17,7 @@ async function printReport(pages) {
     
     // Creates new dir, saves links to links.txt
     var d = new Date();
-    const dir = `./Crawled/${d}`;
+    const dir = `./${d}`;
     try {
         await fs.mkdir(dir)
         await fs.writeFile(`./${dir}/links.txt`, sortedPages.join("\r\n"))
